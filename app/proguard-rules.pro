@@ -61,9 +61,37 @@
 -keep class com.amap.api.fence.**{*;}
 -keep class com.autonavi.aps.amapapi.model.**{*;}
 
-#webview与js交互
--keepclassmembers class cn.xx.xx.Activity$AppAndroid {
+#webview与js交互  class <包名>.类名$*  这里的类名是你写js交互方法的类 内部类
+#-keepclassmembers class 包名.类名$内部类名 {
+#  public *;
+#}
+#webview与js交互  class <包名>.类名$*  这里的类名是你写js交互方法的类
+-keepclassmembers class ccom.pingan.paces.ccms.html.TCJavaScriptInterface {
   public *;
 }
+
+#保护注解
 -keepattributes *Annotation*
 -keepattributes *JavascriptInterface*
+
+
+#魔推
+-keep class com.google.protobuf.** { *; }
+-keep class com.mrocker.push.** { *; }
+
+#shareSDK
+-keep class cn.sharesdk.**{*;}
+-keep class com.sina.**{*;}
+-keep class **.R$* {*;}
+-keep class **.R{*;}
+-keep class com.mob.**{*;}
+-dontwarn com.mob.**
+-dontwarn cn.sharesdk.**
+-dontwarn **.R$*
+-keep class m.framework.**{*;}
+
+#保留一个完整的包，如果有些类调用了jni也不需要混淆，不然会出错
+#-keep class com.xxx.** {*;}
+
+#这个是保持项目中的第三方jar不混淆
+#-libraryjars libs/xxx.jar
