@@ -21,13 +21,16 @@
 -keep public class * extends android.content.BroadcastReceiver
 -keep public class * extends android.content.ContentProvider
 -keep public class * extends android.app.backup.BackupAgentHe
--keep public class * extends android.support.v4.app.Fragment
+-keep public class * extends android.support.v4.**
 -keep public class * extends android.preference.Preference
 -keep public class com.android.vending.licensing.ILicensingService
 
 -keep class org.apache.http.** { *; }
 -dontwarn org.apache.http.**
 -dontwarn android.net.**
+
+#一般model最好避免混淆（model无关紧要，不混淆也没多大关系）
+-keep class com.xxx.xxx.model.** { *; }
 
 -keepclasseswithmembernames class * {  # 保持 native 方法不被混淆
     native <methods>;

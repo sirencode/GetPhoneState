@@ -39,23 +39,23 @@ android {
     }
 
     //多渠道打包
-    productFlavors {
-        xiaomi {
-            manifestPlaceholders = [UMENG_CHANNEL_VALUE: "xiaomi"]
-        }
-        qihoo {
-            manifestPlaceholders = [UMENG_CHANNEL_VALUE: "qihoo"]
-        }
-        baidu {
-            manifestPlaceholders = [UMENG_CHANNEL_VALUE: "baidu"]
-        }
-        wandoujia {
-            manifestPlaceholders = [UMENG_CHANNEL_VALUE: "wandoujia"]
-        }
-        qq {
-            manifestPlaceholders = [UMENG_CHANNEL_VALUE: "yiyongbao"]
-        }
-    }
+//    productFlavors {
+//        xiaomi {
+//            manifestPlaceholders = [UMENG_CHANNEL_VALUE: "xiaomi"]
+//        }
+//        qihoo {
+//            manifestPlaceholders = [UMENG_CHANNEL_VALUE: "qihoo"]
+//        }
+//        baidu {
+//            manifestPlaceholders = [UMENG_CHANNEL_VALUE: "baidu"]
+//        }
+//        wandoujia {
+//            manifestPlaceholders = [UMENG_CHANNEL_VALUE: "wandoujia"]
+//        }
+//        qq {
+//            manifestPlaceholders = [UMENG_CHANNEL_VALUE: "yiyongbao"]
+//        }
+//    }
 
 }
 
