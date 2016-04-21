@@ -26,6 +26,7 @@
 -keep public class com.android.vending.licensing.ILicensingService
 
 -keep class org.apache.http.** { *; }
+-keep class android.net.**{*;}
 -dontwarn org.apache.http.**
 -dontwarn android.net.**
 
@@ -69,10 +70,14 @@
 -keepclassmembers class ccom.pingan.paces.ccms.html.TCJavaScriptInterface {
   public *;
 }
-
 #保护注解
 -keepattributes *Annotation*
 -keepattributes *JavascriptInterface*
+#当对WebViewClient进行复杂处理时调用
+-keepclassmembers class * extends android.webkit.WebViewClient {*;}
+-keepclassmembers class * extends android.webkit.WebChromeClient {*;}
+-keep class android.webkit.**{*;}
+-keep class android.net.http.SslError{*;}
 
 
 #魔推
